@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#app {
+  max-width: 600px;
+  margin: auto;
+}
+
+#image-container {
+  margin-top: 20px;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+#food-image {
+  width: 600px;      /* Set the desired width */
+  height: 600px;     /* Set the desired height */
+  object-fit: cover; /* Ensures the image scales to fit within the box while maintaining aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners to the image */
+  border: 1px solid #ddd; /* Optional: adds a light border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}

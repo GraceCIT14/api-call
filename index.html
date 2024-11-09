@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Food Image Gallery</h1>
+    <!-- Group cuisine selector and "Get Food Image" button side-by-side -->
+    <div style="display: inline-block;">
+      <select id="cuisine-select">
+        <option value="">Random</option>
+        <option value="burger">Burger</option>
+        <option value="pasta">Pasta</option>
+        <option value="sushi">Sushi</option>
+        <option value="pizza">Pizza</option>
+        <option value="dessert">Dessert</option>
+      </select>
+      <button id="fetch-food-btn">Get Food Image</button>
+    </div>
+    
+    <div id="image-container">
+      <img id="food-image" alt="Food image will appear here">
+    </div>
+
+    <div>
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+      </div>
+    <div id="error-message" style="color: red;"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
