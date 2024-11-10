@@ -2,17 +2,17 @@ const baseUrl = "https://foodish-api.com/api";
 const imgElement = document.getElementById("food-image");
 const errorMessage = document.getElementById("error-message");
 
-let images = [];   // Array to store images
-let currentIndex = -1;  // Index for current image
+let images = [];   
+let currentIndex = -1;  
 
-// Function to fetch a random image that matches the selected category
+
 function fetchFoodImage() {
   const cuisine = document.getElementById("cuisine-select").value;
 
-  // Show loading message while fetching
+  
   errorMessage.textContent = "Loading image...";
 
-  // Function to get a random image that matches the category
+  
   function getRandomImage() {
     fetch(`${baseUrl}/`)
       .then(response => {
@@ -22,13 +22,13 @@ function fetchFoodImage() {
       .then(data => {
         const imageUrl = data.image;
 
-        // Check if the URL includes the selected category
+        
         if (cuisine === "" || imageUrl.includes(cuisine)) {
-          images.push(imageUrl); // Add the image to the array
-          currentIndex = images.length - 1; // Update current index to the last image
-          displayImage(); // Show the image
-        } else {
-          // Retry if category doesn't match
+          images.push(imageUrl); 
+          currentIndex = images.length - 1; 
+          displayImage(); 
+        } else { 
+          
           getRandomImage();
         }
       })
@@ -38,20 +38,20 @@ function fetchFoodImage() {
       });
   }
 
-  getRandomImage(); // Start fetching
+  getRandomImage(); 
 }
 
-// Function to display the current image based on currentIndex
+
 function displayImage() {
   if (images.length > 0 && currentIndex >= 0 && currentIndex < images.length) {
     imgElement.src = images[currentIndex];
-    errorMessage.textContent = "";  // Clear error/loading message
+    errorMessage.textContent = "";  
   } else {
     errorMessage.textContent = "No images available.";
   }
 }
 
-// Event listeners for buttons
+
 document.getElementById("fetch-food-btn").addEventListener("click", fetchFoodImage);
 
 document.getElementById("next-btn").addEventListener("click", () => {
@@ -59,7 +59,7 @@ document.getElementById("next-btn").addEventListener("click", () => {
     currentIndex++;
     displayImage();
   } else {
-    fetchFoodImage();  // Fetch new image if at the end of the array
+    fetchFoodImage();  
   }
 });
 
@@ -70,5 +70,4 @@ document.getElementById("prev-btn").addEventListener("click", () => {
   }
 });
 
-// Initial fetch on page load
 fetchFoodImage();

@@ -1,27 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #077a24; 
+  color: white;
   text-align: center;
+  padding: 1em 0;
+}
+
+header h1 {
+  font-size: 2.0em;
 }
 
 #app {
-  max-width: 600px;
-  margin: auto;
+  flex: 1;
+  padding: 20px;
+  text-align: center;
 }
 
-#image-container {
+#cuisine-select {
+  font-size: 1.1em; 
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+}
+
+button {
+  font-size: 1.1em; 
+  padding: 8px 16px; 
+  background-color: #ff9800; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px; 
+}
+
+button:hover {
+  background-color: #e68900;
+}
+
+#fetch-food-btn {
+  margin-left: 8px; 
+}
+
+#prev-btn, #next-btn {
+  font-size: 1em; 
+  padding: 6px 12px;
+  background-color: #4CAF50; 
+}
+
+#prev-btn:hover, #next-btn:hover {
+  background-color: #45a049; /
+}
+
+#food-image {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
 }
 
 #error-message {
   color: red;
-  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold; 
+  margin-top: 10px; 
 }
 
-#food-image {
-  width: 600px;      /* Set the desired width */
-  height: 600px;     /* Set the desired height */
-  object-fit: cover; /* Ensures the image scales to fit within the box while maintaining aspect ratio */
-  border-radius: 8px; /* Optional: adds rounded corners to the image */
-  border: 1px solid #ddd; /* Optional: adds a light border around the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+footer {
+  font-size: 1.0em;
 }
